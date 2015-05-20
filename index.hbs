@@ -1,0 +1,49 @@
+<section class="template-7">
+
+	<section class="splash__background" style="background-image:url({{background}})">
+
+		<section class="splash">
+	    	<div class="splash__container">
+	    		<div class="splash__content">
+					<h2 class="splash__header">{{title}}</h2>
+
+						<a href="mailto:{{ email.val }}">
+							<button class="splash__button splash__button--green"><p>Contact me</p></button>
+						</a>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</section>
+
+    <section id="about" class="about">
+    	<div class="container">
+	    	<div class="profile__crop">
+				<img class="avatar"
+					src="{{ avatar }}">
+	    	</div>
+
+			<h4 class="about__header">{{name}}</h4>
+			<p class="about__text">{{about}}</p>
+		</div>
+    </section>
+
+	<section id="work" class="work">
+		<ul class="projects ui-list">
+			{{#each projects}}
+				{{#if this.show}}
+					<li class="project" data-index="{{@index}}">
+						<div class="container">
+							<a href="{{this.url}}" target="_blank">
+								<h4 class="project__header">{{this.name}}</h4>
+							</a>
+							<div class="markdown">
+								{{{content}}}
+							</div>
+						</div>
+					</li>
+				{{/if}}
+			{{/each}}
+		</ul>
+	</section>
+</section>
